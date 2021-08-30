@@ -1,0 +1,91 @@
+using System;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string don="evet",w;
+
+        al:
+            Double x, y, z, toplam, cıkarma, carpma, bolme;
+                Console.WriteLine("Yapmak istediğiniz işlemi seçiniz(1-4)");
+                Console.WriteLine("Çarpma");
+                Console.WriteLine("Bölme");
+                Console.WriteLine("Toplama");
+                Console.WriteLine("Çıkarma");
+                z = Convert.ToInt32(Console.ReadLine());
+                if (z <= 4)
+                {
+                    if (z > 0)
+                    {
+                        Console.WriteLine("bir sayı giriniz");
+                        x = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine("ikinci sayıyı giriniz");
+                        y = Convert.ToDouble(Console.ReadLine());
+                        switch (z)
+                        {
+                            case 1:
+                                carpma = x * y;
+                                Console.WriteLine("Cevap : {0} ", carpma);
+                                break;
+                            case 2:
+                                bolme = x / y;
+                                Console.WriteLine("Cevap : {0} ", bolme);
+                                break;
+                            case 3:
+                                toplam = x + y;
+                                Console.WriteLine("Cevap : {0} ",toplam);
+                                break;
+                            case 4:
+                                cıkarma = x - y;
+                                Console.WriteLine("Cevap : {0} ", cıkarma);
+                                break;
+                            default:
+                                Console.WriteLine("Lütfen bir sayı giriniz");
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("lütfen 1-4 arasında bir sayı yazınız Tekrar?(evet-hayır)");
+                    don = Console.ReadLine();
+                    if (don == "evet")
+                    {
+                        goto al;
+                    }
+                    else
+                    {
+                        Environment.Exit(0);
+                    }
+                }
+                Console.WriteLine("Tekrar?(evet-hayır)");
+                w = Console.ReadLine();
+                if (w == "evet")
+                {
+                    goto al;
+                }
+                else
+                {
+                    Environment.Exit(0);
+                }
+            }
+                else
+                {
+                    Console.WriteLine("lütfen 1-4 arasında bir sayı yazınız Tekrar?(evet-hayır)");
+                    don = Console.ReadLine();
+                if (don == "evet")
+                {
+                    goto al;
+                }
+                else
+                {
+                    Environment.Exit(0);
+                }
+            }
+                Console.ReadKey();
+            
+        }
+    }
+}
